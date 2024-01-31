@@ -1,11 +1,15 @@
 // Write your code here
-// Write your code here
 import './index.css'
 
-const LogoutButton = () => (
-  <button type="button" className="button">
-    Logout
-  </button>
-)
-
+const LogoutButton = props => {
+  const {onClickButton} = props
+  const changeState = () => {
+    onClickButton()
+  }
+  return (
+    <button type="button" className="button" onClick={changeState()}>
+      Logout
+    </button>
+  )
+}
 export default LogoutButton
