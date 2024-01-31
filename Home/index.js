@@ -1,4 +1,5 @@
 // Write your code here
+// Write your code here
 import {Component} from 'react'
 import './index.css'
 import LoginButton from '../Login/index'
@@ -17,12 +18,16 @@ class Home extends Component {
     }
   }
 
+  onClickButton = () => {
+    this.onLogged()
+  }
+
   displayButton = () => {
     const {isLoggedIn} = this.state
     if (isLoggedIn === true) {
-      return <LogoutButton onClick={this.onLogged} />
+      return <LogoutButton onClickButton={this.onClickButton} />
     }
-    return <LoginButton onClick={this.onLogged} />
+    return <LoginButton onClickButton={this.onClickButton} />
   }
 
   render() {
